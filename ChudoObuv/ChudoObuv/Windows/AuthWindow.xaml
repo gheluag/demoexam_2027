@@ -1,0 +1,30 @@
+﻿<Window
+    x:Class="ChudoObuv.Windows.AuthWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ChudoObuv"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Чудо Обувь"
+    Width="350"
+    Height="250"
+     Icon="/Images/ChudoOvuv.png"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" Text="Авторизация" />
+        <TextBox x:Name="loginTb" Width="150" />
+        <Button
+            x:Name="authBtn"
+            Click="authBtn_Click"
+            Content="Войти" />
+        <TextBlock
+            x:Name="guestTxt"
+            HorizontalAlignment="Center"
+            Cursor="Hand"
+            MouseLeftButtonUp="guestTxt_MouseLeftButtonUp"
+            Text="Посмотреть товары" />
+    </StackPanel>
+</Window>

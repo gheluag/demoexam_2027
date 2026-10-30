@@ -1,0 +1,173 @@
+﻿<Window x:Class="ChudoObuv.Windows.CatalogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChudoObuv.Windows"
+        xmlns:conv="clr-namespace:ChudoObuv.Converters"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+       Icon="/Images/ChudoOvuv.png"
+        ResizeMode="NoResize"
+        Title="Чудо Обувь" Width="860"
+    Height="770">
+
+    <Window.Resources>
+        <conv:ImageConverter x:Key="ImgPath"/>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Border
+            Background="#D2F6E7"
+            Padding="10">
+            <StackPanel HorizontalAlignment="Right">
+                <TextBlock x:Name="UserTb"/>
+                <Button x:Name="exitBtn" 
+                        Content="выйти"
+                        Background="#70B2AF"
+                        Click="exitBtn_Click"
+                        Cursor="Hand"/>
+            </StackPanel>
+        </Border>
+        
+        <Grid Grid.Row="1"
+              x:Name="SortGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <TextBlock 
+                    Margin="5, 0"
+                    Text="Сортировать по цене"/>
+                <ComboBox Height="32"
+                          x:Name="SortCb"
+                          Margin="5, 0"
+                          SelectionChanged="SortCb_SelectionChanged">
+                    <ComboBoxItem Content="Без сортировки"
+                                  IsSelected="True"/>
+                    <ComboBoxItem Content="По возрастанию"/>
+                    <ComboBoxItem Content="По убыванию"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBlock 
+                    Margin="5, 0"
+                    Text="Фильтр по категории"/>
+                <ComboBox Height="32"
+                          SelectionChanged="filterCb_SelectionChanged"
+                          x:Name="filterCb"
+                          Margin="5, 0"
+                          DisplayMemberPath="CatName"
+                          SelectedValuePath="IdCat"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="2">
+              <TextBlock 
+    Margin="5, 0"
+    Text="Поиск"/>
+            <TextBox x:Name="searchTb"
+                     TextChanged="searchTb_TextChanged"
+                     Height="32"
+                     Margin="5, 0"/>  
+            </StackPanel>
+        </Grid>
+        <ListBox
+    x:Name="prodList"
+    BorderThickness="0"
+    Grid.Row="2"
+    Margin="5"
+    ScrollViewer.VerticalScrollBarVisibility="Hidden"
+    ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                Width="815"
+                Height="175"
+                Margin="5"
+                Padding="10"
+                Background="White"
+                BorderBrush="#808080"
+                BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="135"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="130"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Image 
+                        x:Name="ProdImage"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Width="115"
+                        Height="115"
+                        Stretch="Uniform"
+                        Source=
+                        "{Binding Image,
+                        Converter={StaticResource ImgPath}}"/>
+
+                            <TextBlock 
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        TextWrapping="Wrap">
+                        <Run Text="{Binding Manuf.ManufName}"/>
+                        <Run Text=" | "/>
+                        <Run Text="{Binding ProdName}"/>
+                            </TextBlock>
+
+                            <StackPanel
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        VerticalAlignment="Center">
+                                <TextBlock x:Name="prodCat">
+                            <Run Text="Категория: "/>
+                            <Run Text="{Binding Cat.CatName}"/>
+                                </TextBlock>
+
+                                <TextBlock x:Name="countProd">
+                            <Run Text="Количество: "/>
+                            <Run Text="{Binding CountText, Mode=OneWay}"/>
+                                </TextBlock>
+
+                                <TextBlock x:Name="sostavProd"
+                                   TextWrapping="Wrap">
+                            <Run Text="Состав: "/>
+                            <Run Text="{Binding Struct}"/>
+                                </TextBlock>
+                            </StackPanel>
+
+                            <TextBlock
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="18"
+                        Text="{Binding FinalPrice, Mode=OneWay, StringFormat={}{0:F2} ₽}"/>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</Window>
