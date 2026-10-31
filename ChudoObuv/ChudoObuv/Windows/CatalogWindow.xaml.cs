@@ -37,9 +37,44 @@ namespace ChudoObuv.Windows
                 CurrentUser.Role != "Гость" ?
                 Visibility.Visible :
                 Visibility.Collapsed;
+            orderBtn.Visibility =
+                CurrentUser.Role != "Гость" ?
+                Visibility.Visible :
+                Visibility.Collapsed;
         }
 
+        private void prodList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (prodList.SelectedItem is not Product product)
+                return;
 
+            prodList.SelectedItem = null;
+
+            var window = new ProductInfoWindow(product.IdProd);
+            window.Owner = this;
+            window.ShowDialog();
+
+            UpdateCartButton();
+        }
+
+        private void orderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new OrderWindow();
+            window.Owner = this;
+
+            if (window.ShowDialog() == true)
+                LoadProd();
+
+            UpdateCartButton();
+        }
+
+        private void UpdateCartButton()
+        {
+            if (orderBtn == null)
+                return;
+
+            orderBtn.Content = $"Корзина ({AppData.Cart.Sum(x => x.Quantity)})";
+        }
         private void exitBtn_Click(object sender, RoutedEventArgs e)
         {
             var mn = new AuthWindow();
@@ -125,5 +160,7 @@ namespace ChudoObuv.Windows
         {
             LoadProd();
         }
+
+      
     }
 }

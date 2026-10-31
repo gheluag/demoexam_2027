@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\jabka\source\repos\ChudoObuv\ChudoObuv\obj\Debug\net8.0-windows\
+C:\Users\ChibisovaAE\Desktop\демоэкз\demoexam_2027\ChudoObuv\ChudoObuv\obj\Debug\net8.0-windows\
 ChudoObuv
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\jabka\source\repos\ChudoObuv\ChudoObuv\App.xaml
-31615784100
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+C:\Users\ChibisovaAE\Desktop\демоэкз\demoexam_2027\ChudoObuv\ChudoObuv\App.xaml
+6-18639052
 34-1180212943
-20-1212432166
-212-1467914647
-Styles.xaml;Windows\AuthWindow.xaml;Windows\CatalogWindow.xaml;
+25181770964
+212456916238
+MainWindow.xaml;Styles.xaml;Windows\AuthWindow.xaml;Windows\CatalogWindow.xaml;Windows\OrderWindow.xaml;Windows\ProductInfoWindow.xaml;
 
-True
+False
 

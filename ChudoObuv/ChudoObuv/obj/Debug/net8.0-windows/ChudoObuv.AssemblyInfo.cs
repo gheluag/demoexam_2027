@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChudoObuv")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0dabc0d084cfbad1ebf1668d81e39e695f61c579")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChudoObuv")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChudoObuv")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,91 @@
+﻿<Window
+    x:Class="ChudoObuv.Windows.ProductInfoWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:conv="clr-namespace:ChudoObuv.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ChudoObuv.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Просмотр товара"
+    Width="760"
+    Height="590"
+    Icon="/Images/ChudoOvuv.png"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <conv:ImageConverter x:Key="ImgPath" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image
+            Width="220"
+            Height="220"
+            Margin="10"
+            VerticalAlignment="Top"
+            Source="{Binding Image, Converter={StaticResource ImgPath}}" />
+        <StackPanel Grid.Column="1">
+            <TextBlock FontSize="18" TextWrapping="Wrap">
+                <Run Text="{Binding Manuf.ManufName}" />
+                <Run Text=" | " />
+                <Run Text="{Binding ProdName}" />
+            </TextBlock>
+
+            <TextBlock Margin="5,10,5,5">
+                <Run Text="Категория: " />
+                <Run Text="{Binding Cat.CatName}" />
+            </TextBlock>
+
+            <TextBlock>
+                <Run Text="Цена: " />
+                <Run Text="{Binding FinalPrice, Mode=OneWay, StringFormat={}{0:F2} ₽}" />
+            </TextBlock>
+
+            <TextBlock TextWrapping="Wrap">
+                <Run Text="Состав: " />
+                <Run Text="{Binding Struct}" />
+            </TextBlock>
+
+            <TextBlock TextWrapping="Wrap">
+                <Run Text="Описание: " />
+                <Run Text="{Binding Descrip}" />
+            </TextBlock>
+
+            <TextBlock>
+                <Run Text="Размерный ряд: " />
+                <Run x:Name="sizeRangeTb" />
+            </TextBlock>
+
+            <StackPanel x:Name="orderPanel">
+                <TextBlock Text="Доступный размер" />
+
+                <ComboBox
+                    x:Name="sizeCb"
+                    Height="32"
+                    Margin="5"
+                    DisplayMemberPath="Size.Size1"
+                    SelectionChanged="sizeCb_SelectionChanged" />
+
+                <TextBlock Text="Количество" />
+                <TextBlock x:Name="stockTb" Margin="0,0,0,0" />
+                <ComboBox
+                    x:Name="quantityCb"
+                    Height="32"
+                    Margin="5" />
+
+                <Button
+                    x:Name="addBtn"
+                    Click="addBtn_Click"
+                    Content="Добавить в заказ" />
+            </StackPanel>
+
+            <Button
+                x:Name="backBtn"
+                Click="backBtn_Click"
+                Content="Назад" />
+        </StackPanel>
+    </Grid>
+</Window>

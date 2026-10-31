@@ -29,11 +29,18 @@
             Padding="10">
             <StackPanel HorizontalAlignment="Right">
                 <TextBlock x:Name="UserTb"/>
-                <Button x:Name="exitBtn" 
-                        Content="выйти"
-                        Background="#70B2AF"
-                        Click="exitBtn_Click"
-                        Cursor="Hand"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="orderBtn"
+            Content="Корзина (0)"
+            Background="#70B2AF"
+            Click="orderBtn_Click"
+            Cursor="Hand"/>
+                    <Button x:Name="exitBtn" 
+            Content="выйти"
+            Background="#70B2AF"
+            Click="exitBtn_Click"
+            Cursor="Hand"/>
+                </StackPanel>
             </StackPanel>
         </Border>
         
@@ -87,7 +94,8 @@
     Grid.Row="2"
     Margin="5"
     ScrollViewer.VerticalScrollBarVisibility="Hidden"
-    ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+    ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            SelectionChanged="prodList_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border
