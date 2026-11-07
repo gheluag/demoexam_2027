@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/chudoovuv.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/img_kb_164811.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/img_kb_164816.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/img_kb_185501.png")]
@@ -40,7 +41,5 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/img_ws_185535.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/img_ws_185538.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/picture.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/chudoovuv.ico")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/chudoovuv.png")]
 
 

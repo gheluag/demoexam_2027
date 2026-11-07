@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace ChudoObuv;
 
-namespace ChudoObuv
+public static class CurrentUser
 {
-    public static class CurrentUser
+    public static int Id { get; set; }
+    public static string FullName { get; set; } = "Гость";
+    public static string Role { get; set; } = "Гость";
+    public static bool IsAuthenticated => Id > 0;
+    public static bool IsAdmin => Role == "Администратор";
+    public static bool CanManageOrders => IsAdmin || Role == "Менеджер";
+
+    public static void Reset()
     {
-        public static int Id { get; set; }
-        public static string FullName { get; set; }
-        public static string Role {  get; set; }
+        Id = 0;
+        FullName = "Гость";
+        Role = "Гость";
+        AppData.Cart.Clear();
     }
 }

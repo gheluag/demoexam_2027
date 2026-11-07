@@ -14,11 +14,17 @@
     mc:Ignorable="d">
 
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock HorizontalAlignment="Center" Text="Авторизация" />
-        <TextBox x:Name="loginTb" Width="150" />
+        <TextBlock HorizontalAlignment="Center" Text="Авторизация" 
+                   FontWeight="Bold"/>
+        <TextBlock Text="Логин"
+                   HorizontalAlignment="Center"
+                   Margin="0"/>
+        <TextBox x:Name="loginTb" Width="150" 
+                 Margin="5,0"/>
         <Button
             x:Name="authBtn"
             Click="authBtn_Click"
+            IsDefault="True"
             Content="Войти" />
         <TextBlock
             x:Name="guestTxt"

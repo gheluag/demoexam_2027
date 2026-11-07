@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ChudoObuv.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Просмотр товара"
+    Title="Чудо Обувь — Просмотр товара"
     Width="760"
     Height="590"
     Icon="/Images/ChudoOvuv.png"
@@ -16,7 +16,7 @@
     <Window.Resources>
         <conv:ImageConverter x:Key="ImgPath" />
     </Window.Resources>
-    <Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto"><Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="260" />
             <ColumnDefinition Width="*" />
@@ -87,5 +87,5 @@
                 Click="backBtn_Click"
                 Content="Назад" />
         </StackPanel>
-    </Grid>
+    </Grid></ScrollViewer>
 </Window>

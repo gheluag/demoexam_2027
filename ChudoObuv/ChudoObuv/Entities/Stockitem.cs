@@ -7,11 +7,11 @@ public partial class Stockitem
 {
     public int IdStockItem { get; set; }
 
-    public int? ProdId { get; set; }
+    public int ProdId { get; set; }
 
-    public int? SizeId { get; set; }
+    public int SizeId { get; set; }
 
-    public int? Quantity { get; set; }
+    public int Quantity { get; set; }
 
     public virtual Product? Prod { get; set; }
 
