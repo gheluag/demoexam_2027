@@ -102,6 +102,11 @@ public partial class ChudoobuvContext : DbContext
             entity.Property(e => e.IdOrderItem).HasColumnName("idOrderItem");
             entity.Property(e => e.OrderId).HasColumnName("orderId");
             entity.Property(e => e.ProdId).HasColumnName("prodId");
+            entity.Property(e => e.SizeId).HasColumnName("sizeId");
+            entity.Property(e => e.Quantity).HasColumnName("quantity");
+            entity.Property(e => e.UnitPrice).HasPrecision(10, 2).HasColumnName("unitPrice");
+            entity.HasOne(d => d.Size).WithMany().HasForeignKey(d => d.SizeId)
+                .OnDelete(DeleteBehavior.Restrict).HasConstraintName("fk_OrderItemSize");
 
             entity.HasOne(d => d.Order).WithMany(p => p.Ordersitems)
                 .HasForeignKey(d => d.OrderId)
@@ -193,7 +198,8 @@ public partial class ChudoobuvContext : DbContext
 
             entity.Property(e => e.IdStockItem).HasColumnName("idStockItem");
             entity.Property(e => e.ProdId).HasColumnName("prodId");
-            entity.Property(e => e.Quantity).HasColumnName("quantity");
+            // EF проверяет, что остаток не изменился после загрузки.
+            entity.Property(e => e.Quantity).HasColumnName("quantity").IsConcurrencyToken();
 
             entity.HasOne(d => d.Prod).WithMany(p => p.Stockitems)
                 .HasForeignKey(d => d.ProdId)

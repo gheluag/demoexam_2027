@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ChudoObuv.Entities;
+﻿namespace ChudoObuv.Entities;
 
 public partial class Product
 {
@@ -33,21 +30,9 @@ public partial class Product
 
     public virtual Subcategory? SubCat { get; set; }
 
-    public int Count
-    {
-        get
-        {
-            return Stockitems.Sum(s => s.Quantity ?? 0);
-        }
-    }
+    public int Count => Stockitems.Sum(s => s.Quantity);
 
-    public string CountText
-    {
-        get
-        {
-            return Count > 5 ? "много" : "мало";
-        }
-    }
+    public string CountText => Count > 5 ? "много" : "мало";
 
     public bool IsLowStock => Count <= 3;
 
@@ -62,7 +47,7 @@ public partial class Product
                 currentMonthStart.AddMonths(-1);
 
             return !Ordersitems.Any(o =>
-                o.Order.OrderDate >= previousMonthStart &&
+                o.Order != null && o.Order.OrderDate >= previousMonthStart &&
                 o.Order.OrderDate < currentMonthStart);
         }
     }
@@ -73,9 +58,9 @@ public partial class Product
         {
             decimal price = Price ?? 0;
 
-            return HasDiscount
-                ? price * 0.75m
-                : price;
+            if (HasDiscount)
+                return decimal.Round(price * 0.75m, 2, MidpointRounding.AwayFromZero);
+            return price;
         }
     }
 }

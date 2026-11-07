@@ -6,42 +6,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\ChudoOvuv.ico</ApplicationIcon>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Images\IMG_KB_164811.png" />
-    <None Remove="Images\IMG_KB_164816.png" />
-    <None Remove="Images\IMG_KB_185501.png" />
-    <None Remove="Images\IMG_KSd_185508.png" />
-    <None Remove="Images\IMG_KSd_195207.png" />
-    <None Remove="Images\IMG_KSho_185512.png" />
-    <None Remove="Images\IMG_KS_195213.png" />
-    <None Remove="Images\IMG_KS_195217.png" />
-    <None Remove="Images\IMG_KS_195222.png" />
-    <None Remove="Images\IMG_MB_174349.png" />
-    <None Remove="Images\IMG_MB_191200.png" />
-    <None Remove="Images\IMG_MB_191205.png" />
-    <None Remove="Images\IMG_MSho_190514.png" />
-    <None Remove="Images\IMG_MSho_190518.png" />
-    <None Remove="Images\IMG_MSho_191612.png" />
-    <None Remove="Images\IMG_MS_185531.png" />
-    <None Remove="Images\IMG_MS_185532.png" />
-    <None Remove="Images\IMG_MS_185533.png" />
-    <None Remove="Images\IMG_WB_170859.png" />
-    <None Remove="Images\IMG_WB_170905.png" />
-    <None Remove="Images\IMG_WB_170906.png" />
-    <None Remove="Images\IMG_WSd_174332.png" />
-    <None Remove="Images\IMG_WSd_185156.png" />
-    <None Remove="Images\IMG_WSd_185551.png" />
-    <None Remove="Images\IMG_WSho_174409.png" />
-    <None Remove="Images\IMG_WSho_185202.png" />
-    <None Remove="Images\IMG_WSho_185545.png" />
-    <None Remove="Images\IMG_WS_174110.png" />
-    <None Remove="Images\IMG_WS_185528.png" />
-    <None Remove="Images\IMG_WS_185535.png" />
-    <None Remove="Images\IMG_WS_185538.png" />
-    <None Remove="Images\picture.png" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
@@ -53,106 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Images\IMG_KB_164811.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_KB_164816.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_KB_185501.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_KSd_185508.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_KSd_195207.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_KSho_185512.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_KS_195213.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_KS_195217.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_KS_195222.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_MB_174349.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_MB_191200.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_MB_191205.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_MSho_190514.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_MSho_190518.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_MSho_191612.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_MS_185531.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_MS_185532.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_MS_185533.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WB_170859.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WB_170905.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WB_170906.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WSd_174332.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WSd_185156.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WSd_185551.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WSho_174409.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WSho_185202.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WSho_185545.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WS_174110.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WS_185528.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WS_185535.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\IMG_WS_185538.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\picture.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\ChudoOvuv.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\ChudoOvuv.png">
+    <Resource Include="Images\ChudoOvuv.png" />
+    <Content Include="Images\*" Exclude="Images\ChudoOvuv.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ChudoObuv.Entities;
+﻿namespace ChudoObuv.Entities;
 
 public partial class User
 {
@@ -14,6 +11,8 @@ public partial class User
     public string? MiddleName { get; set; }
 
     public string? Login { get; set; }
+
+    public string FullName => $"{LastName} {FirstName} {MiddleName}".Trim();
 
     public int? RoleId { get; set; }
 

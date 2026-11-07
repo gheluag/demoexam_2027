@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ChudoObuv.Entities;
+﻿namespace ChudoObuv.Entities;
 
 public partial class Order
 {
@@ -14,4 +11,10 @@ public partial class Order
     public virtual ICollection<Ordersitem> Ordersitems { get; set; } = new List<Ordersitem>();
 
     public virtual User? User { get; set; }
+
+    public string ClientName => User?.FullName ?? "";
+
+    public decimal Total => Ordersitems.Sum(x => x.Sum);
+
+    public string TotalText => $"{Total:F2} ₽";
 }

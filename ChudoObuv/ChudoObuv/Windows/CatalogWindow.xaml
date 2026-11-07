@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
        Icon="/Images/ChudoOvuv.png"
         ResizeMode="NoResize"
-        Title="Чудо Обувь" Width="860"
+        Title="Чудо Обувь — Каталог" Width="860"
     Height="770">
 
     <Window.Resources>
@@ -27,11 +27,13 @@
         <Border
             Background="#D2F6E7"
             Padding="10">
+            <Grid><Image Source="/Images/ChudoOvuv.png" Width="100" Height="60" Stretch="Uniform" HorizontalAlignment="Left"/>
             <StackPanel HorizontalAlignment="Right">
                 <TextBlock x:Name="UserTb"/>
                 <StackPanel Orientation="Horizontal">
+                    <Button x:Name="ordersBtn" Content="Заказы" Click="ordersBtn_Click" Background="#70B2AF"/>
                     <Button x:Name="orderBtn"
-            Content="Корзина (0)"
+            Content="Корзина"
             Background="#70B2AF"
             Click="orderBtn_Click"
             Cursor="Hand"/>
@@ -42,7 +44,7 @@
             Cursor="Hand"/>
                 </StackPanel>
             </StackPanel>
-        </Border>
+        </Grid></Border>
         
         <Grid Grid.Row="1"
               x:Name="SortGrid">
@@ -59,7 +61,7 @@
                 <ComboBox Height="32"
                           x:Name="SortCb"
                           Margin="5, 0"
-                          SelectionChanged="SortCb_SelectionChanged">
+                          SelectionChanged="FiltersChanged">
                     <ComboBoxItem Content="Без сортировки"
                                   IsSelected="True"/>
                     <ComboBoxItem Content="По возрастанию"/>
@@ -71,7 +73,7 @@
                     Margin="5, 0"
                     Text="Фильтр по категории"/>
                 <ComboBox Height="32"
-                          SelectionChanged="filterCb_SelectionChanged"
+                          SelectionChanged="FiltersChanged"
                           x:Name="filterCb"
                           Margin="5, 0"
                           DisplayMemberPath="CatName"
@@ -83,7 +85,7 @@
     Margin="5, 0"
     Text="Поиск"/>
             <TextBox x:Name="searchTb"
-                     TextChanged="searchTb_TextChanged"
+                     TextChanged="FiltersChanged"
                      Height="32"
                      Margin="5, 0"/>  
             </StackPanel>
@@ -103,7 +105,7 @@
                 Height="175"
                 Margin="5"
                 Padding="10"
-                Background="White"
+                Background="{Binding Background, RelativeSource={RelativeSource AncestorType=ListBoxItem}}"
                 BorderBrush="#808080"
                 BorderThickness="1">
                         <Grid>
